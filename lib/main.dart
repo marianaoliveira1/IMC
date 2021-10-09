@@ -17,6 +17,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  TextEditingController weightController = TextEditingController();
+  TextEditingController heightController = TextEditingController();
+
+  void _resetFields(){
+    weightController.text = "";
+    heightController.text = "";
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +53,7 @@ class _HomeState extends State<Home> {
                   labelStyle: TextStyle(color: Colors.green)),
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.green, fontSize: 25.0),
+              controller: weightController,
             ),
             TextField(
               keyboardType: TextInputType.number,
@@ -53,6 +62,7 @@ class _HomeState extends State<Home> {
                   labelStyle: TextStyle(color: Colors.green)),
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.green, fontSize: 25.0),
+              controller: heightController,
             ),
             Padding(
               padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
